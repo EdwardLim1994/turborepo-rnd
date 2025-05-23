@@ -1,0 +1,9 @@
+{
+  "name": "gateway",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "bun run main.ts",
+    "typecheck": "tsc"
+  }
+}

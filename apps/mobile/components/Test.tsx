@@ -1,18 +1,23 @@
+import React, { useState, useEffect } from "react";
 import { Text } from "react-native";
-import { gql, useQuery } from "@apollo/client";
+import { useApolloClient } from "@apollo/client";
+import { useBlog } from "@learning/clients/viewmodels/useBlog";
 
 export default function Test() {
-  const GET_DATA = gql`
-    query blog {
-      hi
-    }
-  `;
+  const client = useApolloClient();
 
-  const { loading, error, data } = useQuery(GET_DATA);
+  const [blog, setBlog] = useState("");
 
-  if (loading) return <Text>Loading...</Text>;
+  useEffect(() => {
+    const getBlog = async () => {
+      const result = await useBlog(client).catch((e) => console.error(e));
 
-  if (error) return <Text>Error: {error.message}</Text>;
+      setBlog(result.data.hi);
+    };
 
-  return <Text>{data.hi}</Text>;
+    getBlog();
+  }, []);
+
+  if (blog === "") return <Text>Loading...</Text>;
+  else return <Text>{blog}</Text>;
 }

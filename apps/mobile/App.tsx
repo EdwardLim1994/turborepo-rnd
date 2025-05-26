@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { ApolloProvider } from "@apollo/client";
-import client from "./utils/apolloClient";
+import { client } from "./utils/apolloClient";
 import Test from "./components/Test";
 
 export default function App() {

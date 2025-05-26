@@ -9,12 +9,11 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@apollo/client": "^3.13.8",
     "expo": "~53.0.8",
     "expo-status-bar": "~2.2.3",
-    "graphql": "^16.11.0",
     "react": "19.0.0",
-    "react-native": "0.79.2"
+    "react-native": "0.79.2",
+    "@learning/clients": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

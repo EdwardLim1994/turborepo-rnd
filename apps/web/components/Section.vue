@@ -1,6 +1,7 @@
 <template>
 	<h1 v-if="loading">is loading</h1>
-	<h1 v-else>{{ data }}</h1>
+	<h1 v-else-if="error">{{ error.message }}</h1>
+	<h1 v-else>{{ data.getBlog.hi }}</h1>
 </template>
 
 <script lang="ts" setup>

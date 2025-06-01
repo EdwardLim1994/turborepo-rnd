@@ -1,9 +1,9 @@
 {
-  "name": "blog",
-  "type": "module",
-  "private": true,
-  "scripts": {
-    "dev": "bun run main.ts",
-    "typecheck": "tsc"
-  }
+	"name": "blog",
+	"module": "index.ts",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"dev": "bun run --watch index.ts"
+	}
 }

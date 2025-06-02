@@ -1,17 +1,16 @@
-import { HttpService } from "@nestjs/axios";
+import RestClient from "@learning/clients/clients/RestClient";
 import { Injectable } from "@nestjs/common";
 import type { AxiosResponse } from "axios";
 
 @Injectable()
 export default class BlogService {
-	constructor(private readonly httpService: HttpService) {}
+  q;
+  constructor(private restClient: RestClient) {
+    this.restClient.domain = "http//100.105.32.95:4000";
+  }
 
-	getBlog(): Promise<AxiosResponse<string>> {
-		console.log("Fetching blog data from http://localhost:4000/blog");
-		return this.httpService.axiosRef.get("http://localhost:4000/blog", {
-			headers: {
-				Accept: "text/plain", // or remove this header if not needed
-			},
-		});
-	}
+  getBlog(): Promise<AxiosResponse<string>> {
+    console.log("Fetching blog data from http://localhost:4000/blog");
+    return this.restClient.get("blog");
+  }
 }

@@ -3,7 +3,8 @@
 # ------------------------------------------------------
 
 type Blog {
-  hi: String
+  id: Int!
+  title: String
 }
 
 type Query {

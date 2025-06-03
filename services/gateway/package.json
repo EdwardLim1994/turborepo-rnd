@@ -9,7 +9,6 @@
   "dependencies": {
     "@apollo/server": "^4.12.1",
     "@nestjs/apollo": "^13.1.0",
-    "@nestjs/graphql": "^13.1.0",
     "@learning/clients": "*"
   }
 }
